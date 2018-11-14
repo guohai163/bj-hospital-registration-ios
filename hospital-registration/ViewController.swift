@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     let loginService = LoginService()
     
     @IBOutlet weak var CEControl: CorrectErrorControl!
+    @IBOutlet weak var MobileTextField: UITextField!
+    @IBOutlet weak var PasswordTextField: UITextField!
     
     @IBAction func checkButton(_ sender: Any) {
         
@@ -25,8 +27,8 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginService.checkLoginState() {_,_ in
-            
+        loginService.checkLoginState() {code,msg in
+            print(code,msg)
         }
         // Do any additional setup after loading the view, typically from a nib.
     }

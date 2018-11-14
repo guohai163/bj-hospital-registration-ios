@@ -16,6 +16,9 @@ class LoginService {
     
     var dataTask: URLSessionDataTask? = nil
     
+    /// 登录方法
+    ///
+    /// userName: userName 用户名
     func LoginResutlts(userName: String, passWord: String, completion: @escaping QueryResult) {
         dataTask?.cancel()
         
@@ -116,8 +119,9 @@ class LoginService {
                     print( "JSONSerialization error: \(parseError.localizedDescription)\n")
                     return
                 }
+                print(Int(responseData!["code"] as! String) as Any)
                 DispatchQueue.main.sync {
-                    completion(responseData!["code"] as! Int,responseData!["msg"] as! String)
+                    completion(Int(responseData!["code"] as! String)!,"")
                 }
                 
             }
