@@ -10,7 +10,7 @@
 		2F0A6AF621998A1600344390 /* CorrectErrorControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6AF521998A1600344390 /* CorrectErrorControl.swift */; };
 		2F0A6AF8219AA6EE00344390 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6AF7219AA6EE00344390 /* LoginData.swift */; };
 		2F0A6AFC219C1FB700344390 /* SelectHospitalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6AFB219C1FB700344390 /* SelectHospitalTableViewController.swift */; };
-		2F0A6AFE219C286500344390 /* LoadingHospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6AFD219C286500344390 /* LoadingHospital.swift */; };
+		2F0A6AFE219C286500344390 /* LoadingHospitalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6AFD219C286500344390 /* LoadingHospitalService.swift */; };
 		2FA94031218C8759001A5727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA94030218C8759001A5727 /* AppDelegate.swift */; };
 		2FA94033218C8759001A5727 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA94032218C8759001A5727 /* ViewController.swift */; };
 		2FA94036218C8759001A5727 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA94034218C8759001A5727 /* Main.storyboard */; };
@@ -36,7 +36,7 @@
 		2F0A6AF521998A1600344390 /* CorrectErrorControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectErrorControl.swift; sourceTree = "<group>"; };
 		2F0A6AF7219AA6EE00344390 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		2F0A6AFB219C1FB700344390 /* SelectHospitalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHospitalTableViewController.swift; sourceTree = "<group>"; };
-		2F0A6AFD219C286500344390 /* LoadingHospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHospital.swift; sourceTree = "<group>"; };
+		2F0A6AFD219C286500344390 /* LoadingHospitalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHospitalService.swift; sourceTree = "<group>"; };
 		2FA9402D218C8759001A5727 /* hospital-registration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hospital-registration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA94030218C8759001A5727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FA94032218C8759001A5727 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				2FEFD6EF219929AD004BE97A /* LoginService.swift */,
-				2F0A6AFD219C286500344390 /* LoadingHospital.swift */,
+				2F0A6AFD219C286500344390 /* LoadingHospitalService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -245,7 +245,7 @@
 				2FA94033218C8759001A5727 /* ViewController.swift in Sources */,
 				2FEFD6F3219930AA004BE97A /* Track.swift in Sources */,
 				2F0A6AF8219AA6EE00344390 /* LoginData.swift in Sources */,
-				2F0A6AFE219C286500344390 /* LoadingHospital.swift in Sources */,
+				2F0A6AFE219C286500344390 /* LoadingHospitalService.swift in Sources */,
 				2FA94031218C8759001A5727 /* AppDelegate.swift in Sources */,
 				2F0A6AF621998A1600344390 /* CorrectErrorControl.swift in Sources */,
 				2F0A6AFC219C1FB700344390 /* SelectHospitalTableViewController.swift in Sources */,

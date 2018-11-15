@@ -9,6 +9,9 @@
 import UIKit
 
 class SelectHospitalTableViewController: UITableViewController {
+    
+    var searchResults: [Track] = []
+    var loadingHospital = LoadingHospitalService()
 
     override func viewDidLoad() {
         super.viewDidLoad()

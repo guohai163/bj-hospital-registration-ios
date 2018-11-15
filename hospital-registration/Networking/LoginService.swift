@@ -16,9 +16,13 @@ class LoginService {
     
     var dataTask: URLSessionDataTask? = nil
     
+
     /// 登录方法
     ///
-    /// userName: userName 用户名
+    /// - Parameters:
+    ///   - userName: 用户手机号
+    ///   - passWord: 用户密码
+    ///   - completion: 回调方法
     func LoginResutlts(userName: String, passWord: String, completion: @escaping QueryResult) {
         dataTask?.cancel()
         
@@ -78,6 +82,9 @@ class LoginService {
         
     }
     
+    /// 检查用户登录状态
+    ///
+    /// - Parameter completion: 回调方法
     func checkLoginState(completion: @escaping QueryResult) {
         guard let loginData:LoginData = (NSKeyedUnarchiver.unarchiveObject(withFile: LoginData.ArchiveURL.path) as! LoginData) else {
             fatalError("load loginData fatal")

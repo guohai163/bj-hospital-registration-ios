@@ -12,15 +12,14 @@ import Foundation
 class Track {
     
     let name: String
-    let artist: String
-    let previewURL: URL
+    let id: Int
     let index: Int
-    var downloaded = false
+
     
-    init(name: String, artist: String, previewURL: URL, index: Int) {
+    init(name: String, id: Int, index: Int) {
         self.name = name
-        self.artist = artist
-        self.previewURL = previewURL
+        self.id = id
+
         self.index = index
     }
     

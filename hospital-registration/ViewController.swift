@@ -30,6 +30,11 @@ class ViewController: UIViewController {
         loginService.checkLoginState() {code,msg in
             print(code,msg)
         }
+        
+        let Loading = LoadingHospitalService()
+        Loading.getHospitalResults() {_,_ in
+            
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
