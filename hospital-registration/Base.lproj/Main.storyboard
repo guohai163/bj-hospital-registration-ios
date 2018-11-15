@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="hospital_registration" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="hospital_registration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,6 +66,7 @@
                         <outlet property="CEControl" destination="TWb-V7-7IT" id="6kP-65-jAg"/>
                         <outlet property="MobileTextField" destination="P76-Ut-fbY" id="ozY-bw-3e3"/>
                         <outlet property="PasswordTextField" destination="Fgy-4p-zHI" id="Zx7-uz-ab0"/>
+                        <segue destination="3Ji-OV-WrX" kind="show" identifier="toHospitalListRoad" id="wI0-Pj-la3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

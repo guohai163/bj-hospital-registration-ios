@@ -11,7 +11,7 @@ import Foundation
 /// 医院加载类
 class LoadingHospitalService{
     
-    typealias QueryResult = ([Track], String) -> ()
+    typealias QueryResult = ([Track]?, String) -> ()
     typealias JSONDictionary = [String: Any]
     
     var tracks:[Track] = []

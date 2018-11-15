@@ -12,7 +12,7 @@
 		2F0A6AFC219C1FB700344390 /* SelectHospitalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6AFB219C1FB700344390 /* SelectHospitalTableViewController.swift */; };
 		2F0A6AFE219C286500344390 /* LoadingHospitalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6AFD219C286500344390 /* LoadingHospitalService.swift */; };
 		2FA94031218C8759001A5727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA94030218C8759001A5727 /* AppDelegate.swift */; };
-		2FA94033218C8759001A5727 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA94032218C8759001A5727 /* ViewController.swift */; };
+		2FA94033218C8759001A5727 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA94032218C8759001A5727 /* LoginViewController.swift */; };
 		2FA94036218C8759001A5727 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA94034218C8759001A5727 /* Main.storyboard */; };
 		2FA94038218C875B001A5727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FA94037218C875B001A5727 /* Assets.xcassets */; };
 		2FA9403B218C875B001A5727 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA94039218C875B001A5727 /* LaunchScreen.storyboard */; };
@@ -39,7 +39,7 @@
 		2F0A6AFD219C286500344390 /* LoadingHospitalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHospitalService.swift; sourceTree = "<group>"; };
 		2FA9402D218C8759001A5727 /* hospital-registration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hospital-registration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA94030218C8759001A5727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2FA94032218C8759001A5727 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2FA94032218C8759001A5727 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2FA94035218C8759001A5727 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2FA94037218C875B001A5727 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FA9403A218C875B001A5727 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,6 +73,7 @@
 		2F0A6AFA219BCE9200344390 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2FA94032218C8759001A5727 /* LoginViewController.swift */,
 				2F0A6AFB219C1FB700344390 /* SelectHospitalTableViewController.swift */,
 			);
 			path = Views;
@@ -103,7 +104,6 @@
 				2FEFD6F121993094004BE97A /* Model */,
 				2FEFD6EE21992968004BE97A /* Networking */,
 				2FA94030218C8759001A5727 /* AppDelegate.swift */,
-				2FA94032218C8759001A5727 /* ViewController.swift */,
 				2FA94034218C8759001A5727 /* Main.storyboard */,
 				2FA94037218C875B001A5727 /* Assets.xcassets */,
 				2FA94039218C875B001A5727 /* LaunchScreen.storyboard */,
@@ -242,7 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FA94033218C8759001A5727 /* ViewController.swift in Sources */,
+				2FA94033218C8759001A5727 /* LoginViewController.swift in Sources */,
 				2FEFD6F3219930AA004BE97A /* Track.swift in Sources */,
 				2F0A6AF8219AA6EE00344390 /* LoginData.swift in Sources */,
 				2F0A6AFE219C286500344390 /* LoadingHospitalService.swift in Sources */,

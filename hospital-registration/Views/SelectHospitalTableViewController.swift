@@ -15,6 +15,14 @@ class SelectHospitalTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        loadingHospital.getHospitalResults() { results,msg in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            if let results = results {
+                self.searchResults = results
+            }
+            
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
