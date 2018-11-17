@@ -81,5 +81,12 @@ class LoadingHospitalService{
                 
             }
         }
+        tracks.sort { (t1, t2) -> Bool in
+            return t1.id < t2.id
+        }
+        
      }
+    
+
+
 }
