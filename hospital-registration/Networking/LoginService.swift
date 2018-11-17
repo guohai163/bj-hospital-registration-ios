@@ -16,6 +16,7 @@ class LoginService {
     
     var dataTask: URLSessionDataTask? = nil
     
+    
 
     /// 登录方法
     ///
@@ -59,11 +60,9 @@ class LoginService {
                     print( "JSONSerialization error: \(parseError.localizedDescription)\n")
                     return
                 }
-                var cookies:String = ""
+
                 if(responseData!["code"] as! Int == 200 ){
-                    cookies = response.allHeaderFields["Set-Cookie"] as! String
-                    cookies = cookies.replacingOccurrences(of: "Path=/; HttpOnly,", with: "", options: String.CompareOptions.literal, range: nil)
-                    cookies = cookies.replacingOccurrences(of: "path=/", with: "", options: String.CompareOptions.literal, range: nil)
+                    let cookies:[HTTPCookie] = HTTPCookieStorage.shared.cookies(for: url!)!
                     
                     guard let loginData = LoginData(mobile: userName, pass: passWord, cookies: cookies)
                         else {
@@ -72,7 +71,7 @@ class LoginService {
                     NSKeyedArchiver.archiveRootObject(loginData, toFile: LoginData.ArchiveURL.path)
                 }
                 DispatchQueue.main.sync {
-                    completion(responseData!["code"] as! Int ,cookies )
+                    completion(responseData!["code"] as! Int ,responseData!["msg"] as! String  )
                 }
             }
             
@@ -86,9 +85,18 @@ class LoginService {
     ///
     /// - Parameter completion: 回调方法
     func checkLoginState(completion: @escaping QueryResult) {
+        
+
+        
         guard let loginData:LoginData = (NSKeyedUnarchiver.unarchiveObject(withFile: LoginData.ArchiveURL.path) as! LoginData) else {
             fatalError("load loginData fatal")
         }
+        if let cookies:[HTTPCookie] = loginData.cookies {
+            for cookie:HTTPCookie in cookies {
+                HTTPCookieStorage.shared.setCookie(cookie)
+            }
+        }
+        
         print(loginData)
         dataTask?.cancel()
         //
@@ -104,7 +112,7 @@ class LoginService {
         request.setValue("http://www.bjguahao.gov.cn/index.htm", forHTTPHeaderField: "Referer")
         request.setValue("http://www.bjguahao.gov.cn", forHTTPHeaderField: "Origin")
         request.setValue("keep-alive", forHTTPHeaderField: "Connection")
-        request.setValue(loginData.cookies , forHTTPHeaderField: "Cookie")
+//        request.setValue(loginData.cookies , forHTTPHeaderField: "Cookie")
         
         let postData = "isAjax=true".data(using: String.Encoding.utf8)
         request.httpBody = postData

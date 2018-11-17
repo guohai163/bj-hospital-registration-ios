@@ -20,13 +20,19 @@ class LoginViewController: UIViewController {
         
         CEControl.iconStatues = "correct"
         
+
+        
         loginService.LoginResutlts(userName: "18500050982", passWord: "3k5fgb4a") {stateCode,cookies in
             print(stateCode)
             print(cookies)
             if (stateCode == 200 ){
                 self.performSegue(withIdentifier: "toHospitalListRoad", sender: nil)
             } else {
-                UIAlertView(title: "请重新登录", message: "请重新登录", delegate: nil, cancelButtonTitle: "cancel").show()
+                let alert = UIAlertController(title: "登录失败", message: "请重新登录", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                    NSLog("The \"OK\" alert occured.")
+                }))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
@@ -37,10 +43,13 @@ class LoginViewController: UIViewController {
             if (code == 200 ){
                 self.performSegue(withIdentifier: "toHospitalListRoad", sender: nil)
             } else {
-                UIAlertView(title: "请重新登录", message: "请重新登录", delegate: nil, cancelButtonTitle: "cancel").show()
+                let alert = UIAlertController(title: "登录失败", message: "请重新登录", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                    NSLog("The \"OK\" alert occured.")
+                }))
+                self.present(alert, animated: true, completion: nil)
             }
            
-//
         }
         
 //        let Loading = LoadingHospitalService()

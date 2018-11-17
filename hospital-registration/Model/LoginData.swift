@@ -13,7 +13,7 @@ class LoginData: NSObject, NSCoding {
     
     var mobile:String
     var pass:String
-    var cookies:String
+    var cookies:[HTTPCookie]
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     
@@ -26,7 +26,7 @@ class LoginData: NSObject, NSCoding {
     }
     
     //MARK: init
-    init?(mobile: String, pass: String, cookies:String) {
+    init?(mobile: String, pass: String, cookies:[HTTPCookie]) {
         guard !mobile.isEmpty else {
             return nil
         }
@@ -39,9 +39,6 @@ class LoginData: NSObject, NSCoding {
         self.cookies = cookies
     }
     
-    func getCookies() -> String {
-        return self.cookies
-    }
     
     //MARK: NSCoding
     func encode(with aCoder: NSCoder) {
@@ -61,7 +58,7 @@ class LoginData: NSObject, NSCoding {
                 return nil
         }
         
-        guard  let cookies = aDecoder.decodeObject(forKey: PropertyKey.cookies) as? String else {
+        guard  let cookies = aDecoder.decodeObject(forKey: PropertyKey.cookies) as? [HTTPCookie] else {
             return nil
         }
         

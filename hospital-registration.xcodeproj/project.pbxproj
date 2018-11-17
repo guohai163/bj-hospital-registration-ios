@@ -11,6 +11,8 @@
 		2F0A6AF8219AA6EE00344390 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6AF7219AA6EE00344390 /* LoginData.swift */; };
 		2F0A6AFC219C1FB700344390 /* SelectHospitalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6AFB219C1FB700344390 /* SelectHospitalTableViewController.swift */; };
 		2F0A6AFE219C286500344390 /* LoadingHospitalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6AFD219C286500344390 /* LoadingHospitalService.swift */; };
+		2F0A6B02219EA68A00344390 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6B01219EA68A00344390 /* Utils.swift */; };
+		2F0A6B04219FE71000344390 /* HospitalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6B03219FE71000344390 /* HospitalCell.swift */; };
 		2FA94031218C8759001A5727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA94030218C8759001A5727 /* AppDelegate.swift */; };
 		2FA94033218C8759001A5727 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA94032218C8759001A5727 /* LoginViewController.swift */; };
 		2FA94036218C8759001A5727 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA94034218C8759001A5727 /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 		2F0A6AF7219AA6EE00344390 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		2F0A6AFB219C1FB700344390 /* SelectHospitalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHospitalTableViewController.swift; sourceTree = "<group>"; };
 		2F0A6AFD219C286500344390 /* LoadingHospitalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHospitalService.swift; sourceTree = "<group>"; };
+		2F0A6B01219EA68A00344390 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		2F0A6B03219FE71000344390 /* HospitalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalCell.swift; sourceTree = "<group>"; };
 		2FA9402D218C8759001A5727 /* hospital-registration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hospital-registration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA94030218C8759001A5727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FA94032218C8759001A5727 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -75,8 +79,17 @@
 			children = (
 				2FA94032218C8759001A5727 /* LoginViewController.swift */,
 				2F0A6AFB219C1FB700344390 /* SelectHospitalTableViewController.swift */,
+				2F0A6B03219FE71000344390 /* HospitalCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2F0A6B00219EA64C00344390 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2F0A6B01219EA68A00344390 /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		2FA94024218C8759001A5727 = {
@@ -100,6 +113,7 @@
 		2FA9402F218C8759001A5727 /* hospital-registration */ = {
 			isa = PBXGroup;
 			children = (
+				2F0A6B00219EA64C00344390 /* Utils */,
 				2F0A6AFA219BCE9200344390 /* Views */,
 				2FEFD6F121993094004BE97A /* Model */,
 				2FEFD6EE21992968004BE97A /* Networking */,
@@ -247,9 +261,11 @@
 				2F0A6AF8219AA6EE00344390 /* LoginData.swift in Sources */,
 				2F0A6AFE219C286500344390 /* LoadingHospitalService.swift in Sources */,
 				2FA94031218C8759001A5727 /* AppDelegate.swift in Sources */,
+				2F0A6B02219EA68A00344390 /* Utils.swift in Sources */,
 				2F0A6AF621998A1600344390 /* CorrectErrorControl.swift in Sources */,
 				2F0A6AFC219C1FB700344390 /* SelectHospitalTableViewController.swift in Sources */,
 				2FA940512192896A001A5727 /* FindHospitalTableViewController.swift in Sources */,
+				2F0A6B04219FE71000344390 /* HospitalCell.swift in Sources */,
 				2FEFD6F0219929AD004BE97A /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,14 +12,19 @@ class SelectHospitalTableViewController: UITableViewController {
     
     var searchResults: [Track] = []
     var loadingHospital = LoadingHospitalService()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         loadingHospital.getHospitalResults() { results,msg in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             if let results = results {
                 self.searchResults = results
+               self.tableView.reloadData()
+                
             }
             
         }
@@ -34,24 +39,35 @@ class SelectHospitalTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+
+        return searchResults.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cellIdentifier = "HospitalTableViewCell"
 
-        // Configure the cell...
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? HospitalCell else {
+            fatalError("create cell fatal")
+        }
+        let track = searchResults[indexPath.row]
+        cell.nameLabel.text = track.name
+        cell.idLabel.text = String(track.id)
+        
+        
+//
+//        // Configure the cell...
+//
+//        let track = searchResults[indexPath.row]
+//
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
