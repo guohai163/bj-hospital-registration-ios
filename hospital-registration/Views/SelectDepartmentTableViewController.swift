@@ -1,73 +1,58 @@
 //
-//  SelectHospitalTableViewController.swift
+//  SelectDepartmentTableViewController.swift
 //  hospital-registration
 //
-//  Created by 郭海 on 2018/11/14.
+//  Created by 郭海 on 2018/11/19.
 //  Copyright © 2018 gh. All rights reserved.
 //
 
 import UIKit
 
-class SelectHospitalTableViewController: UITableViewController {
+class SelectDepartmentTableViewController: UITableViewController {
     
-    var searchResults: [Track] = []
-    var loadingHospital = LoadingHospitalService()
-    
+    var hospital:Track?
 
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated:true)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        loadingHospital.getHospitalResults() { results,msg in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            if let results = results {
-                self.searchResults = results
-               self.tableView.reloadData()
-                
-            }
-            
-        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if let hospital = hospital {
+            print(hospital)
+        }
+        
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-
-        return 1
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return searchResults.count
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "HospitalTableViewCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? HospitalCell else {
-            fatalError("create cell fatal")
-        }
-        let track = searchResults[indexPath.row]
-        cell.nameLabel.text = track.name
-        cell.idLabel.text = String(track.id)
-        
-        
-//
-//        // Configure the cell...
-//
-//        let track = searchResults[indexPath.row]
-//
+        // Configure the cell...
+
         return cell
     }
- 
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -108,31 +93,11 @@ class SelectHospitalTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- 
-        super.prepare(for: segue, sender: sender)
-        
-        switch (segue.identifier ?? "") {
-        case "ShowDepartment":
-
-            guard let SDController = segue.destination as? SelectDepartmentTableViewController
-                else {
-                     fatalError("Unexpected destination: \(segue.destination)")
-            }
-            guard let selectdHospitalCell = sender as? HospitalCell else {
-                fatalError()
-            }
-            
-            guard let indexPath = tableView.indexPath(for: selectdHospitalCell) else {
-                fatalError()
-            }
-            let selectedHospital = searchResults[indexPath.row]
-            SDController.hospital = selectedHospital
-            print(selectdHospitalCell)
-        default:
-            print("default")
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destination.
+//        // Pass the selected object to the new view controller.
+//
+//    }
  
 
 }

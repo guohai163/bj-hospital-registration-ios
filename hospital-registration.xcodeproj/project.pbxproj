@@ -13,6 +13,7 @@
 		2F0A6AFE219C286500344390 /* LoadingHospitalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6AFD219C286500344390 /* LoadingHospitalService.swift */; };
 		2F0A6B02219EA68A00344390 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6B01219EA68A00344390 /* Utils.swift */; };
 		2F0A6B04219FE71000344390 /* HospitalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6B03219FE71000344390 /* HospitalCell.swift */; };
+		2F2CA00B21A25E3E0082ED0B /* SelectDepartmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2CA00A21A25E3E0082ED0B /* SelectDepartmentTableViewController.swift */; };
 		2FA94031218C8759001A5727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA94030218C8759001A5727 /* AppDelegate.swift */; };
 		2FA94033218C8759001A5727 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA94032218C8759001A5727 /* LoginViewController.swift */; };
 		2FA94036218C8759001A5727 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA94034218C8759001A5727 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		2F0A6AFD219C286500344390 /* LoadingHospitalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHospitalService.swift; sourceTree = "<group>"; };
 		2F0A6B01219EA68A00344390 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		2F0A6B03219FE71000344390 /* HospitalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalCell.swift; sourceTree = "<group>"; };
+		2F2CA00A21A25E3E0082ED0B /* SelectDepartmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDepartmentTableViewController.swift; sourceTree = "<group>"; };
 		2FA9402D218C8759001A5727 /* hospital-registration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hospital-registration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA94030218C8759001A5727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FA94032218C8759001A5727 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				2FA94032218C8759001A5727 /* LoginViewController.swift */,
 				2F0A6AFB219C1FB700344390 /* SelectHospitalTableViewController.swift */,
 				2F0A6B03219FE71000344390 /* HospitalCell.swift */,
+				2F2CA00A21A25E3E0082ED0B /* SelectDepartmentTableViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				2FA94033218C8759001A5727 /* LoginViewController.swift in Sources */,
 				2FEFD6F3219930AA004BE97A /* Track.swift in Sources */,
 				2F0A6AF8219AA6EE00344390 /* LoginData.swift in Sources */,
+				2F2CA00B21A25E3E0082ED0B /* SelectDepartmentTableViewController.swift in Sources */,
 				2F0A6AFE219C286500344390 /* LoadingHospitalService.swift in Sources */,
 				2FA94031218C8759001A5727 /* AppDelegate.swift in Sources */,
 				2F0A6B02219EA68A00344390 /* Utils.swift in Sources */,

@@ -66,14 +66,14 @@
                         <outlet property="CEControl" destination="TWb-V7-7IT" id="6kP-65-jAg"/>
                         <outlet property="MobileTextField" destination="P76-Ut-fbY" id="ozY-bw-3e3"/>
                         <outlet property="PasswordTextField" destination="Fgy-4p-zHI" id="Zx7-uz-ab0"/>
-                        <segue destination="3Ji-OV-WrX" kind="show" identifier="toHospitalListRoad" id="wI0-Pj-la3"/>
+                        <segue destination="7gP-dg-tz7" kind="show" identifier="toHospitalListRoad" id="wI0-Pj-la3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53.600000000000001" y="26.53673163418291"/>
         </scene>
-        <!--Select Hospital Table View Controller-->
+        <!--选择医院-->
         <scene sceneID="7X9-ya-ia3">
             <objects>
                 <tableViewController id="3Ji-OV-WrX" customClass="SelectHospitalTableViewController" customModule="hospital_registration" customModuleProvider="target" sceneMemberID="viewController">
@@ -108,6 +108,7 @@
                                 <connections>
                                     <outlet property="idLabel" destination="gkd-Wg-wmv" id="o0h-Gi-IbN"/>
                                     <outlet property="nameLabel" destination="KQj-uc-dsq" id="xKj-m8-WLe"/>
+                                    <segue destination="79D-8p-4BR" kind="show" identifier="ShowDepartment" id="oGb-o5-JzL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -116,10 +117,86 @@
                             <outlet property="delegate" destination="3Ji-OV-WrX" id="vH9-VK-rzA"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="选择医院" id="2Iv-mi-NIm"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPA-iQ-nud" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="31.934032983508249"/>
+        </scene>
+        <!--选择科室-->
+        <scene sceneID="SDG-Tk-L3z">
+            <objects>
+                <tableViewController id="79D-8p-4BR" customClass="SelectDepartmentTableViewController" customModule="hospital_registration" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xBO-5X-zja">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="M2D-6S-s44">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M2D-6S-s44" id="gsT-0O-dim">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="79D-8p-4BR" id="ue0-f8-Sq0"/>
+                            <outlet property="delegate" destination="79D-8p-4BR" id="B8Q-m0-dIh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="选择科室" id="8ju-Af-7hO">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="z6l-gS-czD"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Xjj-nI-Fmv">
+                            <connections>
+                                <action selector="cancel:" destination="79D-8p-4BR" id="KTw-x8-oEH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bIE-ot-6Yq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3482.4000000000001" y="37.331334332833585"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dFo-Lo-AtM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Up2-XJ-mUk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gy2-HR-ed2">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="79D-8p-4BR" kind="relationship" relationship="rootViewController" id="QRn-Hm-7Zd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9qm-Eu-5tY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2554" y="391"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dco-xl-fIa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7gP-dg-tz7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kMO-Am-Hy2">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3Ji-OV-WrX" kind="relationship" relationship="rootViewController" id="P8y-vv-xDj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="htN-Vl-Dc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="760.79999999999995" y="31.934032983508249"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oGb-o5-JzL"/>
+    </inferredMetricsTieBreakers>
 </document>
