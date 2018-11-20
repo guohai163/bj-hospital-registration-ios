@@ -10,13 +10,9 @@ import UIKit
 
 class SelectDepartmentTableViewController: UITableViewController {
     
-    var hospital:Track?
+    var hospital:Hospital?
 
-    @IBAction func cancel(_ sender: UIBarButtonItem) {
-        if let owningNavigationController = navigationController{
-            owningNavigationController.popViewController(animated:true)
-        }
-    }
+    var departmentsService = DepartmentsService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +25,15 @@ class SelectDepartmentTableViewController: UITableViewController {
         if let hospital = hospital {
             print(hospital)
         }
+        departmentsService.loadingDepartments(hospitalId: hospital!.id)
+    
         
+    }
+    
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated:true)
+        }
     }
 
     // MARK: - Table view data source

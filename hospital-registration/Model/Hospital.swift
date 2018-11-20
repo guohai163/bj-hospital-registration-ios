@@ -9,7 +9,7 @@
 import Foundation
 
 // Query service creates Track objects
-class Track {
+class Hospital {
     
     let name: String
     let id: Int

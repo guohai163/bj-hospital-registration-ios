@@ -11,10 +11,10 @@ import Foundation
 /// 医院加载类
 class LoadingHospitalService{
     
-    typealias QueryResult = ([Track]?, String) -> ()
+    typealias QueryResult = ([Hospital]?, String) -> ()
     typealias JSONDictionary = [String: Any]
     
-    var tracks:[Track] = []
+    var tracks:[Hospital] = []
     
     /// URL会话
     let defaultSession = URLSession(configuration: .default)
@@ -75,7 +75,7 @@ class LoadingHospitalService{
             if let trackDictionary = trackDictionary as? JSONDictionary,
                 let id = trackDictionary["id"] as? Int,
                 let name = trackDictionary["name"] as? String {
-                tracks.append(Track(name: name, id: id, index: index))
+                tracks.append(Hospital(name: name, id: id, index: index))
                 index += 1
             } else {
                 

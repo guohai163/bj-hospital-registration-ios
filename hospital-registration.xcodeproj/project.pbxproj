@@ -14,6 +14,8 @@
 		2F0A6B02219EA68A00344390 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6B01219EA68A00344390 /* Utils.swift */; };
 		2F0A6B04219FE71000344390 /* HospitalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0A6B03219FE71000344390 /* HospitalCell.swift */; };
 		2F2CA00B21A25E3E0082ED0B /* SelectDepartmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2CA00A21A25E3E0082ED0B /* SelectDepartmentTableViewController.swift */; };
+		2F2CA00D21A39F010082ED0B /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2CA00C21A39F010082ED0B /* Department.swift */; };
+		2F2CA00F21A3AEDC0082ED0B /* DepartmentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2CA00E21A3AEDC0082ED0B /* DepartmentsService.swift */; };
 		2FA94031218C8759001A5727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA94030218C8759001A5727 /* AppDelegate.swift */; };
 		2FA94033218C8759001A5727 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA94032218C8759001A5727 /* LoginViewController.swift */; };
 		2FA94036218C8759001A5727 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA94034218C8759001A5727 /* Main.storyboard */; };
@@ -22,7 +24,7 @@
 		2FA94046218C875B001A5727 /* hospital_registrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA94045218C875B001A5727 /* hospital_registrationTests.swift */; };
 		2FA940512192896A001A5727 /* FindHospitalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA940502192896A001A5727 /* FindHospitalTableViewController.swift */; };
 		2FEFD6F0219929AD004BE97A /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEFD6EF219929AD004BE97A /* LoginService.swift */; };
-		2FEFD6F3219930AA004BE97A /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEFD6F2219930AA004BE97A /* Track.swift */; };
+		2FEFD6F3219930AA004BE97A /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEFD6F2219930AA004BE97A /* Hospital.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		2F0A6B01219EA68A00344390 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		2F0A6B03219FE71000344390 /* HospitalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalCell.swift; sourceTree = "<group>"; };
 		2F2CA00A21A25E3E0082ED0B /* SelectDepartmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDepartmentTableViewController.swift; sourceTree = "<group>"; };
+		2F2CA00C21A39F010082ED0B /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		2F2CA00E21A3AEDC0082ED0B /* DepartmentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsService.swift; sourceTree = "<group>"; };
 		2FA9402D218C8759001A5727 /* hospital-registration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hospital-registration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA94030218C8759001A5727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FA94032218C8759001A5727 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +59,7 @@
 		2FA94047218C875B001A5727 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FA940502192896A001A5727 /* FindHospitalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindHospitalTableViewController.swift; sourceTree = "<group>"; };
 		2FEFD6EF219929AD004BE97A /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		2FEFD6F2219930AA004BE97A /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		2FEFD6F2219930AA004BE97A /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 			children = (
 				2FEFD6EF219929AD004BE97A /* LoginService.swift */,
 				2F0A6AFD219C286500344390 /* LoadingHospitalService.swift */,
+				2F2CA00E21A3AEDC0082ED0B /* DepartmentsService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -151,9 +156,10 @@
 		2FEFD6F121993094004BE97A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2FEFD6F2219930AA004BE97A /* Track.swift */,
+				2FEFD6F2219930AA004BE97A /* Hospital.swift */,
 				2F0A6AF521998A1600344390 /* CorrectErrorControl.swift */,
 				2F0A6AF7219AA6EE00344390 /* LoginData.swift */,
+				2F2CA00C21A39F010082ED0B /* Department.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,14 +266,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FA94033218C8759001A5727 /* LoginViewController.swift in Sources */,
-				2FEFD6F3219930AA004BE97A /* Track.swift in Sources */,
+				2FEFD6F3219930AA004BE97A /* Hospital.swift in Sources */,
 				2F0A6AF8219AA6EE00344390 /* LoginData.swift in Sources */,
+				2F2CA00F21A3AEDC0082ED0B /* DepartmentsService.swift in Sources */,
 				2F2CA00B21A25E3E0082ED0B /* SelectDepartmentTableViewController.swift in Sources */,
 				2F0A6AFE219C286500344390 /* LoadingHospitalService.swift in Sources */,
 				2FA94031218C8759001A5727 /* AppDelegate.swift in Sources */,
 				2F0A6B02219EA68A00344390 /* Utils.swift in Sources */,
 				2F0A6AF621998A1600344390 /* CorrectErrorControl.swift in Sources */,
 				2F0A6AFC219C1FB700344390 /* SelectHospitalTableViewController.swift in Sources */,
+				2F2CA00D21A39F010082ED0B /* Department.swift in Sources */,
 				2FA940512192896A001A5727 /* FindHospitalTableViewController.swift in Sources */,
 				2F0A6B04219FE71000344390 /* HospitalCell.swift in Sources */,
 				2FEFD6F0219929AD004BE97A /* LoginService.swift in Sources */,

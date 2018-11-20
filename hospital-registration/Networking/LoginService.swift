@@ -10,6 +10,7 @@ import Foundation
 
 class LoginService {
     typealias JSONDictionary = [String: Any]
+    
     typealias QueryResult = (Int, String) -> ()
     
     let defaultSession = URLSession.shared

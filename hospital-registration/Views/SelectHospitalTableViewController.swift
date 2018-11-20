@@ -10,7 +10,7 @@ import UIKit
 
 class SelectHospitalTableViewController: UITableViewController {
     
-    var searchResults: [Track] = []
+    var searchResults: [Hospital] = []
     var loadingHospital = LoadingHospitalService()
     
 
