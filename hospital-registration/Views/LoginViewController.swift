@@ -20,9 +20,11 @@ class LoginViewController: UIViewController {
         
         CEControl.iconStatues = "correct"
         
+        let user = MobileTextField.text
+        let pass = PasswordTextField.text
 
         
-        loginService.LoginResutlts(userName: "18500050982", passWord: "3k5fgb4a") {stateCode,cookies in
+        loginService.LoginResutlts(userName: user!, passWord: pass!) {stateCode,cookies in
             print(stateCode)
             print(cookies)
             if (stateCode == 200 ){
@@ -59,6 +61,12 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func singUp(_ sender: Any) {
+//        performSegue(withIdentifier: "showWebView", sender: self)
+        if let url = URL(string: "http://www.bjguahao.gov.cn/reg.htm") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
 }
 

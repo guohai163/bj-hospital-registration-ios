@@ -87,11 +87,16 @@ class LoginService {
     /// - Parameter completion: 回调方法
     func checkLoginState(completion: @escaping QueryResult) {
         
+        if NSKeyedUnarchiver.unarchiveObject(withFile: LoginData.ArchiveURL.path) == nil {
+
+            return
+        }
 
         
         guard let loginData:LoginData = (NSKeyedUnarchiver.unarchiveObject(withFile: LoginData.ArchiveURL.path) as! LoginData) else {
             fatalError("load loginData fatal")
         }
+        
         if let cookies:[HTTPCookie] = loginData.cookies {
             for cookie:HTTPCookie in cookies {
                 HTTPCookieStorage.shared.setCookie(cookie)

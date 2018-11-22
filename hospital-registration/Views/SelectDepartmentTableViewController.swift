@@ -14,6 +14,8 @@ class SelectDepartmentTableViewController: UITableViewController {
 
     var departmentsService = DepartmentsService()
     
+    var searchResults:[Departments] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,7 +27,12 @@ class SelectDepartmentTableViewController: UITableViewController {
         if let hospital = hospital {
             print(hospital)
         }
-        departmentsService.loadingDepartments(hospitalId: hospital!.id)
+         UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        departmentsService.loadingDepartments(hospitalId: hospital!.id) { data, msg in
+             UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            self.searchResults = data!
+            self.tableView.reloadData()
+        }
     
         
     }
@@ -40,23 +47,36 @@ class SelectDepartmentTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return searchResults.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return searchResults[section].department.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return searchResults[section].category
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DepartmentCell", for: indexPath) as? DepartmentTableViewCell else {
+            fatalError()
+        }
+        
+        var data = self.searchResults[indexPath.section]
+        cell.depIDLabel.text = String( data.department[indexPath.row].id)
+        cell.depNameLabel.text = data.department[indexPath.row].name
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
+    
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -97,11 +117,31 @@ class SelectDepartmentTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        switch (segue.identifier ?? "") {
+        case "ShowInfoData":
+            guard let SDController = segue.destination as? SubmitDataViewController else {
+                fatalError("fatal get ")
+            }
+            
+            guard let selectDepartmentCell = sender as? DepartmentTableViewCell else {
+                fatalError()
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectDepartmentCell) else {
+                fatalError()
+            }
+            
+            let selectedDepartment = searchResults[indexPath.section].department[indexPath.row]
+            print(selectedDepartment)
+        default:
+            print("default")
+        }
+    }
  
 
 }

@@ -10,6 +10,8 @@ import Foundation
 
 class DepartmentsService {
     
+    typealias QueryResult = ([Departments]?, String) -> ()
+    
     typealias JSONDictionary = [String: Any]
     /// URL会话
     let defaultSession = URLSession(configuration: .default)
@@ -19,7 +21,7 @@ class DepartmentsService {
     var departments:[Departments] = []
     
     
-    func loadingDepartments(hospitalId:Int) {
+    func loadingDepartments(hospitalId:Int, completion: @escaping QueryResult) {
         dataTask?.cancel()
         
         if var urlComponetns = URLComponents(string: "http://www.bjguahao.gov.cn/dpt/dpts.htm") {
@@ -33,9 +35,9 @@ class DepartmentsService {
                     let response = response as? HTTPURLResponse,
                     response.statusCode == 200 {
                     self.updateResults(data)
-//                    DispatchQueue.main.async {
-//                        completion(self.tracks, "")
-//                    }
+                    DispatchQueue.main.async {
+                        completion(self.departments, "")
+                    }
                 }
             }
             dataTask?.resume()
@@ -61,7 +63,6 @@ class DepartmentsService {
             
             let departs = departs as? JSONDictionary
             let categoryName = departs?["sdCategoryFirstName"] as? String
-            print(categoryName)
             
             if let departms = departs!["departments"] as? [Any] {
                 var deObj:[Department] = []
@@ -74,11 +75,11 @@ class DepartmentsService {
             
         }
 
-        for a in departments {
-            print(a.category)
-            for b in a.department {
-                print(b.id,b.name)
-            }
-        }
+//        for a in departments {
+//            print(a.category)
+//            for b in a.department {
+//                print(b.id,b.name)
+//            }
+//        }
     }
 }

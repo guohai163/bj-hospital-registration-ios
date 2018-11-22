@@ -29,7 +29,7 @@ class LoadingHospitalService{
         //http://www.bjguahao.gov.cn/hp/qsearch.htm?areaId=-1&levelId=-1&isAjax=true
         
         if var urlComponetns = URLComponents(string: "http://www.bjguahao.gov.cn/hp/qsearch.htm") {
-            urlComponetns.query = "areaId=-1&levelId=-1&isAjax=true"
+            urlComponetns.query = "areaId=-1&levelId=3&isAjax=true"
             guard let url = urlComponetns.url else {return}
             
             dataTask = defaultSession.dataTask(with: url) { data, response, error in
