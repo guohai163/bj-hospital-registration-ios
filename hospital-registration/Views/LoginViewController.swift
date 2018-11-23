@@ -45,14 +45,28 @@ class LoginViewController: UIViewController {
             if (code == 200 ){
                 self.performSegue(withIdentifier: "toHospitalListRoad", sender: nil)
             } else {
+                
+                if (NSKeyedUnarchiver.unarchiveObject(withFile: LoginData.ArchiveURL.path) != nil ) {
+                    guard let loginData:LoginData = (NSKeyedUnarchiver.unarchiveObject(withFile: LoginData.ArchiveURL.path) as! LoginData) else {
+                        fatalError("load loginData fatal")
+                    }
+                    self.MobileTextField.text = loginData.mobile
+                    self.PasswordTextField.text = loginData.pass
+                }
+
+                
                 let alert = UIAlertController(title: "登录失败", message: "请重新登录", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
                     NSLog("The \"OK\" alert occured.")
                 }))
                 self.present(alert, animated: true, completion: nil)
+                
+                
             }
            
         }
+        
+        
         
 //        let Loading = LoadingHospitalService()
 //        Loading.getHospitalResults() {_,_ in
