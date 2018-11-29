@@ -19,7 +19,7 @@
 		2F2CA01121A52AEE0082ED0B /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2CA01021A52AEE0082ED0B /* DepartmentTableViewCell.swift */; };
 		2F2CA01321A643160082ED0B /* SubmitDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2CA01221A643160082ED0B /* SubmitDataViewController.swift */; };
 		2F2CA01521A6471F0082ED0B /* RegistrationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2CA01421A6471F0082ED0B /* RegistrationData.swift */; };
-		2F2CA01721A64AC00082ED0B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2CA01621A64AC00082ED0B /* WebViewController.swift */; };
+		2F9F0C1821AED3F5000176DE /* CheckBoxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9F0C1721AED3F5000176DE /* CheckBoxController.swift */; };
 		2FA94031218C8759001A5727 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA94030218C8759001A5727 /* AppDelegate.swift */; };
 		2FA94033218C8759001A5727 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA94032218C8759001A5727 /* LoginViewController.swift */; };
 		2FA94036218C8759001A5727 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA94034218C8759001A5727 /* Main.storyboard */; };
@@ -54,7 +54,7 @@
 		2F2CA01021A52AEE0082ED0B /* DepartmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewCell.swift; sourceTree = "<group>"; };
 		2F2CA01221A643160082ED0B /* SubmitDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitDataViewController.swift; sourceTree = "<group>"; };
 		2F2CA01421A6471F0082ED0B /* RegistrationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationData.swift; sourceTree = "<group>"; };
-		2F2CA01621A64AC00082ED0B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		2F9F0C1721AED3F5000176DE /* CheckBoxController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxController.swift; sourceTree = "<group>"; };
 		2FA9402D218C8759001A5727 /* hospital-registration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hospital-registration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA94030218C8759001A5727 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FA94032218C8759001A5727 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 				2F2CA00A21A25E3E0082ED0B /* SelectDepartmentTableViewController.swift */,
 				2F2CA01021A52AEE0082ED0B /* DepartmentTableViewCell.swift */,
 				2F2CA01221A643160082ED0B /* SubmitDataViewController.swift */,
-				2F2CA01621A64AC00082ED0B /* WebViewController.swift */,
+				2F9F0C1721AED3F5000176DE /* CheckBoxController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,8 +277,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F9F0C1821AED3F5000176DE /* CheckBoxController.swift in Sources */,
 				2FA94033218C8759001A5727 /* LoginViewController.swift in Sources */,
-				2F2CA01721A64AC00082ED0B /* WebViewController.swift in Sources */,
 				2FEFD6F3219930AA004BE97A /* Hospital.swift in Sources */,
 				2F0A6AF8219AA6EE00344390 /* LoginData.swift in Sources */,
 				2F2CA00F21A3AEDC0082ED0B /* DepartmentsService.swift in Sources */,

@@ -10,10 +10,39 @@ import UIKit
 
 class SubmitDataViewController: UIViewController {
 
+    
+    @IBOutlet weak var selectDate: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let date = UIDatePicker()
+        date.datePickerMode = .date
+        date.locale = Locale(identifier: "zh_cn")
+        date.addTarget(self, action: #selector(getDate), for: UIControl.Event.valueChanged)
+        selectDate.inputView = date
+        
+        //use toolbar
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40))
+        let doneBarBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donePressed))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        toolBar.setItems([flexibleSpace,doneBarBtn], animated: true)
+        selectDate.inputAccessoryView = toolBar
+        
+        
+    }
+    
+    @objc func donePressed() {
+        selectDate.resignFirstResponder()
+    }
+    
+    @objc func getDate(datePicker: UIDatePicker) {
+        let formatter = DateFormatter()
+        let date = datePicker.date
+        formatter.dateFormat = "YYY-MM-dd"
+        let dateStr = formatter.string(from: date)
+        self.selectDate.text = dateStr
     }
     
 
